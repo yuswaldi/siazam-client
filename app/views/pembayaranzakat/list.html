@@ -1,0 +1,21 @@
+<h1>Pembayaran Zakat</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>No Kwitansi</th>
+            <th>Tanggal</th>
+            <th>Nama Penyetor</th>
+            <th>Alamat</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr ng-repeat="x in pembayaranZakats">
+            <td>{{x.noKwitansi}}</td>
+            <td>{{x.tanggal}}</td>
+            <td>{{x.namaPenyetor}}</td>
+            <td>{{x.alamatPenyetor}}</td>
+        </tr>
+    </tbody>
+</table>
