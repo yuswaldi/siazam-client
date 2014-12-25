@@ -1,0 +1,63 @@
+<h1>Satuan Zakat</h1>
+
+<div class="modal fade" id="tambahSatuanZakat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Tambah Satuan Zakat</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="kode" class="col-sm-4 control-label">Kode Satuan</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="kode" placeholder="Product Code" ng-model="selectedSatuanZakat.kode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nama" class="col-sm-4 control-label">Nama Satuan</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="nama" placeholder="Product Name" ng-model="selectedSatuanZakat.nama">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" ng-click="save()" data-dismiss="modal">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Kode</th>
+            <th>Nama</th>
+            <th>
+                <button class="btn" data-toggle="modal" data-target="#tambahSatuanZakat">
+                    <span class="glyphicon glyphicon-plus"></span>add
+                </button>
+            </th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr ng-repeat="x in satuanZakats">
+            <td>{{x.kode}}</td>
+            <td>{{x.nama}}</td>
+            <td>
+                <button class="btn" ng-click="edit(x)" data-toggle="modal" data-target="#tambahSatuanZakat">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                    edit
+                </button>
+                <button class="btn" ng-click="hapus(x)">
+                    <span class="glyphicon glyphicon-remove"></span>
+                    delete
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
